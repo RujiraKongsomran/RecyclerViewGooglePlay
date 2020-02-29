@@ -49,7 +49,7 @@ public class MyItemGroupAdapter extends RecyclerView.Adapter<MyItemGroupAdapter.
         holder.btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Button More : " + holder.tvItemTitle.getText(), Toast.LENGTH_SHORT);
+                Toast.makeText(context, "Button More : " + holder.tvItemTitle.getText(), Toast.LENGTH_SHORT).show();
             }
         });
     }

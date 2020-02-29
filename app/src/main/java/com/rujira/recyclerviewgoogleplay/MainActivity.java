@@ -62,15 +62,11 @@ public class MainActivity extends AppCompatActivity implements IFirebaseLoadList
                 for (DataSnapshot groupSnapShot : dataSnapshot.getChildren()) {
                     ItemGroup itemGroup = new ItemGroup();
                     itemGroup.setHeaderTitle(groupSnapShot.child("headerTitle").getValue(true).toString());
-                    GenericTypeIndicator<ArrayList<ItemData>> genericTypeIndicator = new GenericTypeIndicator<ArrayList<ItemData>>() {
-                        @Override
-                        public int hashCode() {
-                            return super.hashCode();
-                        }
-                    };
+                    GenericTypeIndicator<ArrayList<ItemData>> genericTypeIndicator = new GenericTypeIndicator<ArrayList<ItemData>>(){};
                     itemGroup.setListItem(groupSnapShot.child("listItem").getValue(genericTypeIndicator));
                     itemGroups.add(itemGroup);
                 }
+                iFirebaseLoadListener.onFirebaseLoadSuccess(itemGroups);
             }
 
             @Override

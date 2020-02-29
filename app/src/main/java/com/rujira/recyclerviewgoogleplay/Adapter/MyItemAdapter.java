@@ -61,7 +61,7 @@ public class MyItemAdapter extends RecyclerView.Adapter<MyItemAdapter.MyViewHold
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvItemTitle = (TextView) itemView.findViewById(R.id.tvItemTitle);
+            tvItemTitle = (TextView) itemView.findViewById(R.id.tvTitle);
             imgView = (ImageView) itemView.findViewById(R.id.imgView);
 
             itemView.setOnClickListener(this);
